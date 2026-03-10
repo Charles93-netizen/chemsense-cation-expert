@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cation Identification Expert System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Cation Identification Expert System</h1>
+      <p>Enter qualitative test observations to get likely cations.</p>
+    </header>
+
+    <main class="app-main">
+      <section class="card">
+        <h2>Tests &amp; Observations</h2>
+        <form id="tests-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="solutionColor">Color of solution</label>
+              <select id="solutionColor" name="solutionColor">
+                <option value="">Unknown / not observed</option>
+                <option value="colorless">Colorless</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+                <option value="brown">Brown</option>
+                <option value="pale-green">Pale green</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="flameColor">Flame test color</label>
+              <select id="flameColor" name="flameColor">
+                <option value="">Unknown / not done</option>
+                <option value="yellow">Yellow</option>
+                <option value="lilac">Lilac</option>
+                <option value="brick-red">Brick-red</option>
+                <option value="crimson">Crimson</option>
+                <option value="apple-green">Apple-green</option>
+                <option value="blue-green">Blue-green</option>
+                <option value="none">No characteristic color</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="naohPrecip">NaOH (few drops)</label>
+              <select id="naohPrecip" name="naohPrecip">
+                <option value="">Unknown / not done</option>
+                <option value="no-precip">No precipitate</option>
+                <option value="white">White precipitate</option>
+                <option value="blue">Blue precipitate</option>
+                <option value="green">Green precipitate</option>
+                <option value="brown">Brown precipitate</option>
+                <option value="gelatinous-white">Gelatinous white precipitate</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="naohExcess">NaOH (in excess)</label>
+              <select id="naohExcess" name="naohExcess">
+                <option value="">Not tried / not applicable</option>
+                <option value="soluble">Precipitate dissolves (soluble)</option>
+                <option value="insoluble">Precipitate remains (insoluble)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="nh3Precip">Aqueous NH₃ (few drops)</label>
+              <select id="nh3Precip" name="nh3Precip">
+                <option value="">Unknown / not done</option>
+                <option value="no-precip">No precipitate</option>
+                <option value="white">White precipitate</option>
+                <option value="blue">Light blue precipitate</option>
+                <option value="green">Green precipitate</option>
+                <option value="brown">Brown precipitate</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="nh3Excess">Aqueous NH₃ (in excess)</label>
+              <select id="nh3Excess" name="nh3Excess">
+                <option value="">Not tried / not applicable</option>
+                <option value="soluble-deep-blue">Dissolves to deep blue solution</option>
+                <option value="soluble-colorless">Dissolves to colorless solution</option>
+                <option value="insoluble">Precipitate remains (insoluble)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="sulfideTest">H₂S or sulfide test</label>
+              <select id="sulfideTest" name="sulfideTest">
+                <option value="">Unknown / not done</option>
+                <option value="black">Black precipitate</option>
+                <option value="brown">Brown precipitate</option>
+                <option value="green">Green precipitate</option>
+                <option value="no-precip">No precipitate</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="carbonateHcl">Carbonate + dilute HCl</label>
+              <select id="carbonateHcl" name="carbonateHcl">
+                <option value="">Unknown / not done</option>
+                <option value="effervescence">Effervescence of gas (CO₂)</option>
+                <option value="no-reaction">No visible reaction</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="identifyBtn">Identify cation(s)</button>
+            <button type="reset" class="secondary">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card" id="results-card">
+        <h2>Result</h2>
+        <div id="results">
+          <p class="muted">
+            Fill in the test observations and click <strong>Identify cation(s)</strong>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>Educational qualitative analysis helper – always confirm with full analytical scheme.</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
